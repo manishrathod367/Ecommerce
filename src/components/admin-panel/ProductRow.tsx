@@ -11,17 +11,17 @@ import { setLoading } from "@/redux/features/loadingSlice";
 
 interface PropsType {
   srNo: number;
-  setOpenPopup: Dispatch<SetStateAction<boolean>>;
+  // setOpenPopup: Dispatch<SetStateAction<boolean>>;
   setUpdateTable: Dispatch<SetStateAction<boolean>>;
   product: IProduct;
 }
 
-const ProductRow = ({ srNo, setOpenPopup, setUpdateTable, product }: PropsType) => {
+const ProductRow = ({ srNo,  setUpdateTable, product }: PropsType) => {
   const dispatch = useAppDispatch();
 
   const onEdit = () => {
     dispatch(setProduct(product));
-    setOpenPopup(true);
+    // setOpenPopup(true);
   };
 
   const onDelete = () => {
