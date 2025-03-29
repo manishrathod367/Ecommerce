@@ -2,7 +2,9 @@ import { connectMongoDB } from "@/libs/MongoConnect";
 import Product from "@/libs/models/Product";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function PUT(request: NextRequest, URLParams: any) {
+export async function PUT(request: NextRequest, URLParams:{ params: { id: string } }) {
+  // ...
+   {
   try {
 
     const body = await request.json();
@@ -29,4 +31,5 @@ export async function PUT(request: NextRequest, URLParams: any) {
       { status: 400 }
     );
   }
+}
 }

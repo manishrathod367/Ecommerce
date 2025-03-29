@@ -2,7 +2,7 @@
 import Sidebar from '@/components/admin-panel/Sidebar'
 import Loader from "@/components/admin-panel/Loader";
 import { useAppSelector } from "@/redux/hooks";
-import { useSession } from "next-auth/react";
+// import { useSession } from "next-auth/react";
 import { useState ,useEffect} from 'react';
 import { useAppDispatch } from '@/redux/hooks';
 import { setLoading } from '@/redux/features/loadingSlice';
@@ -25,7 +25,7 @@ export interface IProduct {
 
 const Dashboard = ({children}:{children:ReactNode}) => {
   const isLoading = useAppSelector((store) => store.LoadingReducer);
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
 
   const [products, setProducts] = useState([]);
   const [openPopup, setOpenPopup] = useState(false);

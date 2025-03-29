@@ -7,12 +7,8 @@ import { Toaster } from "react-hot-toast";
 
 
 import {
-  ClerkProvider,
-  SignInButton,
-  SignUpButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
+  ClerkProvider
+  
 } from '@clerk/nextjs'
 
 import './globals.css'
