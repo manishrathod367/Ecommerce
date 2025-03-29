@@ -1,8 +1,8 @@
 import { useAppSelector } from "@/redux/hooks";
 import React, { Dispatch, SetStateAction } from "react";
-import { BsSearch, BsSearchHeartFill } from "react-icons/bs";
+import { BsSearch } from "react-icons/bs";
 import {
-  ClerkProvider,
+  
   SignInButton,
   SignUpButton,
   SignedIn,

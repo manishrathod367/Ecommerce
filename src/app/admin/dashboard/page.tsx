@@ -9,7 +9,7 @@ import { setLoading } from '@/redux/features/loadingSlice';
 
 //import '@/styles/globals.css'
 
-import React,{ReactNode} from 'react'
+import React from 'react'
 import axios from 'axios';
 import ProductRow from '@/components/admin-panel/ProductRow';
 
@@ -22,8 +22,8 @@ export interface IProduct {
     category: string;
   // ... (interface definition likely goes here)
 }
-
-const Dashboard = ({children}:{children:ReactNode}) => {
+//{children}:{children:ReactNode}
+const Dashboard = () => {
   const isLoading = useAppSelector((store) => store.LoadingReducer);
   // const { data: session } = useSession();
 

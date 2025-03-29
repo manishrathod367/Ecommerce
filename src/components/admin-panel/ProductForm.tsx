@@ -33,7 +33,7 @@ const handleSubmit = (e: FormEvent) => {
 
   axios
     .post("/api/add_product", payload)
-    .then((res) => {
+    .then(() => {
       makeToast("Product added Successfully");
       setPayLoad({
         imgSrc: null,
