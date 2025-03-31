@@ -5,10 +5,10 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } } // Correct Next.js dynamic route type
+   context: { params: { id: string } }  // Correct Next.js dynamic route type
 ) {
   try {
-    const { id } = params; // Correct access to `id`
+    const id = String(context.params.id) // Correct access to `id`
     const body = await request.json();
     const { name, category, price } = body;
 
@@ -17,7 +17,7 @@ export async function PUT(
     const data = await Product.findByIdAndUpdate(
       id,
       { name, category, price },
-      { new: true }
+      { new: true, runValidators: true }
     );
 
     return NextResponse.json({ msg: "Updated Successfully", data });
