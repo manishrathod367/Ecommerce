@@ -2,13 +2,13 @@
 import { connectMongoDB } from "@/libs/MongoConnect";
 import Product from "@/libs/models/Product";
 import { NextRequest, NextResponse } from "next/server";
-
+type Params = Promise<{ id: string }>;
 export async function PUT(
   request: NextRequest,
-   context: { params: { id: string } }  // Correct Next.js dynamic route type
+  { params }: { params: Params }  // Correct Next.js dynamic route type
 ) {
   try {
-    const id = String(context.params.id) // Correct access to `id`
+    const { id } = await params; // Correct access to `id`
     const body = await request.json();
     const { name, category, price } = body;
 
