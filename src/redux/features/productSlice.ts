@@ -1,4 +1,12 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+interface IProduct {
+  _id: string;
+  imgSrc: string;
+  fileKey: string;
+  name: string;
+  price: string;
+  category: string;
+}
 
 const initialState: IProduct = {
   _id: "",
