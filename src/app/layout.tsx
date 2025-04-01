@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { AuthProvider } from "@/components/admin-panel/AuthProvider";
 import App from "./App";
 import { Toaster } from "react-hot-toast";
-
+//import { store } from "@/redux/store";
 
 import {
   ClerkProvider
@@ -34,20 +33,22 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <ClerkProvider>
+      
+      <ClerkProvider>
+       <App> 
       <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          {/* <header className="flex justify-end items-center p-4 gap-4 h-16">
-            
-          </header> */}
-          <AuthProvider>
-             <App>{children}</App>
-          </AuthProvider>
-          <Toaster position="bottom-center" reverseOrder={false}/>
+        
+            {children}
+          
+            <Toaster position="bottom-center" reverseOrder={false}/>
           
         </body>
       </html>
-    </ClerkProvider>
+      </App>
+      </ClerkProvider> 
+       
+
   )
 }
 

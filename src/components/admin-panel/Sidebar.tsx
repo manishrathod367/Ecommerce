@@ -6,6 +6,7 @@ import { IoAnalytics, IoSettings } from "react-icons/io5";
 import { RiShoppingCartLine } from "react-icons/ri";
 import React from 'react'
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 
@@ -49,7 +50,7 @@ const Sidebar = () => {
   const pathName=usePathname()
   return <div className="bg-white w-[300px] min-h-screen p-4 shrink-0">
     <div className="flex items-center gap-4">
-      <img className="size-12 rounded-lg" src="/logo.jpg" alt="logo" />
+      <Image className="size-12 rounded-lg" src="/Logo.png" alt="logo" width={10} height={10}/>
       <h2 className="text-[20px] font-semibold">E_shop</h2>
     </div>
 

@@ -52,30 +52,28 @@ const ProductRow = ({ srNo,  setUpdateTable, product }: PropsType) => {
   };
 
   return (
-    <tr>
-      <td>
-        <div>{srNo}</div>
-      </td>
-      <td>
-        <div>{product.name}</div>
-      </td>
-      <td>${product.price}</td>
-      <td className="py-2">
-        <Image src={product.imgSrc} width={40} height={40} alt="product_image"/>
-      </td>
-      <td>
-        <div className="text-2xl flex items-center gap-2 text-gray-600">
-            <CiEdit
-            className="cursor-pointer hover:text-black"
-            onClick={onEdit}
-            />
-            <RiDeleteBin5Line
-            className="text-[20px] cursor-pointer hover:text-red-600"
-            onClick={onDelete}
-            />
-        </div>
-</td>
-    </tr>
+    <tr className="text-center items-center">
+  <td className="py-2">{srNo}</td>
+  <td className="py-2">{product.name}</td>
+  <td className="py-2">${product.price}</td>
+  <td className="py-2 flex justify-center">
+    <Image src={product.imgSrc} width={40} height={40} alt="product_image" />
+  </td>
+  <td className="py-2">
+    <div className="text-2xl flex justify-center gap-2 text-gray-600">
+      <CiEdit
+        className="cursor-pointer hover:text-black"
+        onClick={onEdit}
+      />
+      <RiDeleteBin5Line
+        className="text-[20px] cursor-pointer hover:text-red-600"
+        onClick={onDelete}
+      />
+    </div>
+  </td>
+</tr>
+
+
   );
   
   

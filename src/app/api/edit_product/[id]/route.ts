@@ -34,7 +34,7 @@ export async function PUT(
 
 
 // import { connectMongoDB } from "@/libs/MongoConnect";
-// import Product from "@/libs/models/Product";
+// import Product from "@/libs/models/Pderoduct";
 // import { NextRequest, NextResponse } from "next/server";
 
 // export async function PUT(request: NextRequest, URLParams:{ params: { id: string } }) {

@@ -1,13 +1,29 @@
-//import React from 'react'
-"use client"
+// //import React from 'react'
+// "use client"
 
-import { SessionProvider } from "next-auth/react";
-import { ReactNode } from "react"
+// import { SessionProvider } from "next-auth/react";
+// import { ReactNode } from "react"
 
-interface Propstype{
-    children:ReactNode;
-}
+// interface Propstype{
+//     children:ReactNode;
+// }
 
-export const AuthProvider = ({children}:Propstype) => {
-  return <SessionProvider>{children}</SessionProvider>
-};
+// export const AuthProvider = ({children}:Propstype) => {
+//   return <SessionProvider>{children}</SessionProvider>
+// };
+
+import NextAuth from "next-auth";
+import GoogleProvider from "next-auth/providers/google"; // Example provider
+
+const handler = NextAuth({
+  providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+    }),
+  ],
+  secret: process.env.NEXTAUTH_SECRET,
+});
+
+export { handler as GET, handler as POST };
+

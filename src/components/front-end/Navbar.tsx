@@ -1,3 +1,4 @@
+"use client"
 import { useAppSelector } from "@/redux/hooks";
 import React, { Dispatch, SetStateAction } from "react";
 import { BsSearch } from "react-icons/bs";
@@ -22,7 +23,7 @@ const Navbar = ({ setShowCart }: PropsType) => {
     <div className="pt-4 bg-white top-0 sticky">
       <div className="container">
         <div className="flex justify-between items-center w-full">
-          <div className="text-4xl font-bold">Logo</div>
+          <div className="text-4xl font-bold "></div>
           <div className="lg:flex hidden w-full max-w-[500px]">
             <input
                 className="border-2 border-accent px-6 py-2 w-full"
@@ -41,7 +42,7 @@ const Navbar = ({ setShowCart }: PropsType) => {
                               <SignUpButton />
                             </SignedOut>
                             <SignedIn>
-                              <UserButton  />
+                               <UserButton/>
                             </SignedIn>
             </div>
             <div>
